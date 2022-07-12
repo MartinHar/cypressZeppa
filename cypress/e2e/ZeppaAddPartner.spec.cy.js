@@ -1,4 +1,5 @@
 // Add partner - working flow, with corresponding admins at E11 branch
+// noinspection DuplicatedCode
 
 /// <reference types="cypress" />
 
@@ -118,7 +119,7 @@ describe('Add partner',() => {
         cy.get('[type="submit"]').click()
         cy.wait(2000)
     })
-    it('add chain',() => {
+    it.only('add chain',() => {
 
         cy.visit('http://ec2-34-240-105-163.eu-west-1.compute.amazonaws.com/login')
         cy.get('[name="email"]').type(LOAdmin.emailAddress)

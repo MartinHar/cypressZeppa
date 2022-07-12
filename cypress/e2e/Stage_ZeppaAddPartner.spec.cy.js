@@ -1,4 +1,5 @@
 // Add partner - working flow, with corresponding admins at E11 branch
+// noinspection DuplicatedCode
 
 /// <reference types="cypress" />
 
@@ -118,7 +119,8 @@ describe('Add partner',() => {
         cy.get('[type="submit"]').click()
         cy.wait(2000)
     })
-    it('add chain',() => {
+
+    it.only('add chain',() => {
 
         cy.visit('http://ec2-63-34-222-67.eu-west-1.compute.amazonaws.com/login')
         cy.get('[name="email"]').type(LOAdmin.emailAddress)
@@ -150,7 +152,7 @@ describe('Add partner',() => {
         cy.get('[name="bankAccountUsd"]').type(getRandomNumber(10))
         cy.wait(500)
         //ADMIN code
-        cy.get('.ant-form-item-control-input-content').eq(13).type('YYLO').type('{enter}')
+        cy.get('.ant-form-item-control-input-content').eq(12).type('YYLO').type('{enter}')
         //birthday date picker
         cy.get('.ant-picker-input').eq(0).type(birthday).type('{enter}')
         cy.get('.ant-select-selection-item').eq(1).click()
@@ -181,10 +183,10 @@ describe('Add partner',() => {
         cy.contains('Ապրանք - Անշարժ գույք').click()
         //Ծառայություն checkbox
         cy.get('[type="checkbox"]').eq(2).click()
-        cy.get('.ant-form-item-control-input-content').eq(37).type('Ծառայություն - Այլ').type('{enter}')
+        cy.get('.ant-form-item-control-input-content').eq(36).type('Ծառայություն - Այլ').type('{enter}')
         // Նույնն է checkbox
         cy.get('[type="checkbox"]').eq(3).click()
-        cy.get('[type="file"]').eq(0).attachFile('zip.zip')
+        // cy.get('[type="file"]').eq(0).attachFile('zip.zip')
         cy.get('[type="submit"]').click()
     })
 })
