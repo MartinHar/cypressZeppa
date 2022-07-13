@@ -58,7 +58,7 @@ describe('Add partner',() => {
     
     it('Zeppa login page, create potential partner',() => {
 
-        cy.visit('http://ec2-34-240-105-163.eu-west-1.compute.amazonaws.com/login')
+        cy.visit('/')
         cy.get('[name="email"]').type(LOAdmin.emailAddress)
         cy.get('[name="password"]').type(LOAdmin.password)
         cy.get('[type="submit"]').click()
@@ -93,7 +93,7 @@ describe('Add partner',() => {
 
     it('Filtering potential partner',() => {
 
-        cy.visit('http://ec2-34-240-105-163.eu-west-1.compute.amazonaws.com/login')
+        cy.visit('/')
         cy.get('[name="email"]').type(LGLAdmin.emailAddress)
         cy.get('[name="password"]').type(LGLAdmin.password)
         cy.get('[type="submit"]').click()
@@ -119,9 +119,9 @@ describe('Add partner',() => {
         cy.get('[type="submit"]').click()
         cy.wait(2000)
     })
-    it.only('add chain',() => {
+    it('add chain',() => {
 
-        cy.visit('http://ec2-34-240-105-163.eu-west-1.compute.amazonaws.com/login')
+        cy.visit('/')
         cy.get('[name="email"]').type(LOAdmin.emailAddress)
         cy.get('[name="password"]').type(LOAdmin.password)
         cy.get('[type="submit"]').click()
@@ -186,6 +186,6 @@ describe('Add partner',() => {
         // Նույնն է checkbox
         cy.get('[type="checkbox"]').eq(3).click()
         cy.get('[type="file"]').eq(0).attachFile('zip.zip')
-        // cy.get('[type="submit"]').click()
+        cy.get('[type="submit"]').click()
     })
 })
