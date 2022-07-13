@@ -22,7 +22,7 @@ function makeArmWord(length) {
     let characters       = 'ԱԲԳԴԵԶԷԸԹ';
     let charactersLength = characters.length;
     for ( let i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * 
+        result += characters.charAt(Math.floor(Math.random() *
 charactersLength));
 }
 return result;
@@ -34,7 +34,7 @@ function makeEngWord(length) {
     let characters       = 'ABCDEFGHI';
     let charactersLength = characters.length;
     for ( let i = 0; i < length; i++ ) {
-      result += characters.charAt(Math.floor(Math.random() * 
+        result += characters.charAt(Math.floor(Math.random() *
 charactersLength));
 }
 return result;
@@ -120,7 +120,7 @@ describe('Add partner',() => {
         cy.wait(2000)
     })
 
-    it.only('add chain',() => {
+    it('add chain',() => {
 
         cy.visit('http://ec2-63-34-222-67.eu-west-1.compute.amazonaws.com/login')
         cy.get('[name="email"]').type(LOAdmin.emailAddress)
@@ -187,6 +187,6 @@ describe('Add partner',() => {
         // Նույնն է checkbox
         cy.get('[type="checkbox"]').eq(3).click()
         // cy.get('[type="file"]').eq(0).attachFile('zip.zip')
-        cy.get('[type="submit"]').click()
+        // cy.get('[type="submit"]').click()
     })
 })
